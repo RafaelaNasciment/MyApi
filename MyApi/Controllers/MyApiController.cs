@@ -33,10 +33,10 @@ namespace MyApi.Controllers
             return await _cepService.Handle(cep: cep);
         }
 
-        [HttpGet(Name = "Consulta-CpfCnpj/{cpfCnpj}")]
-        public async Task<CpfCnpjModel> ConsultaCpfCnpj(string cpfCnpj, CpfCnpjType cpfCnpjType)
-        {
-            return await _cpfCnpjService.Handle(cpfCnpj: cpfCnpj, type: cpfCnpjType);
-        }
+        //[HttpGet(Name = "Consulta-CpfCnpj/{cpfCnpj}")]
+        //public async Task<CpfCnpjModel> ConsultaCpfCnpj(string cpfCnpj, CpfCnpjType cpfCnpjType)
+        //{
+        //    return await _cpfCnpjService.Handle(cpfCnpj: cpfCnpj, type: cpfCnpjType);
+        //}
     }
 }
