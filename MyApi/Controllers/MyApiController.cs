@@ -1,42 +1,34 @@
 using Microsoft.AspNetCore.Mvc;
 using MyApi.Models;
 using MyApi.Service;
-using MyApi.Service.Contansts;
 
 namespace MyApi.Controllers
 {
     [ApiController]
-    [Route("consumos-apis")]
+    [Route("api/[controller]")]
     public class MyApiController : ControllerBase
     {
-        private readonly ILogger<MyApiController> _logger;
         private readonly CepService _cepService;
         private readonly CpfCnpjService _cpfCnpjService;
 
-        public MyApiController()
-        {
-            
-        }
         public MyApiController(
             CepService cepService,
-            CpfCnpjService cpfCnpjService,
-            ILogger<MyApiController> logger)
+            CpfCnpjService cpfCnpjService)
         {
-            _logger = logger;
             _cepService = cepService;
             _cpfCnpjService = cpfCnpjService;
         }
 
-        [HttpGet(Name = "Consulta-Cep")]
+        [HttpGet("consulta-cep")]
         public async Task<CepModel> ConsultaCep(string cep)
         {
             return await _cepService.Handle(cep: cep);
         }
 
-        //[HttpGet(Name = "Consulta-CpfCnpj/{cpfCnpj}")]
-        //public async Task<CpfCnpjModel> ConsultaCpfCnpj(string cpfCnpj, CpfCnpjType cpfCnpjType)
-        //{
-        //    return await _cpfCnpjService.Handle(cpfCnpj: cpfCnpj, type: cpfCnpjType);
-        //}
+        [HttpGet("consulta-cpfCnpj/{cpfCnpj}/{cpfCnpjType}")]
+        public async Task<CpfCnpjModel> ConsultaCpfCnpj(string cpfCnpj, string cpfCnpjType) //TODO: Validar por constante
+        {
+            return await _cpfCnpjService.Handle(cpfCnpj: cpfCnpj, type: cpfCnpjType);
+        }
     }
 }

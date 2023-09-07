@@ -1,6 +1,5 @@
 ﻿using MyApi.Models;
 using MyApi.Repositories.Interfaces;
-using MyApi.Service.Contansts;
 
 namespace MyApi.Repositories
 {
@@ -12,7 +11,7 @@ namespace MyApi.Repositories
         public InvertextoRepository()
         {            
         }
-        public async Task<CpfCnpjModel> ValidaCpfCnpjModel(string cpfCnpj, CpfCnpjType type)
+        public async Task<CpfCnpjModel> ValidaCpfCnpjModel(string cpfCnpj, string type)
         {
             CpfCnpjModel model = null;
             string url = $"https://api.invertexto.com/v1/validator?token={_token}&value={cpfCnpj}&type={type}";

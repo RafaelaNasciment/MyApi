@@ -1,6 +1,5 @@
 ﻿using MyApi.Models;
 using MyApi.Repositories.Interfaces;
-using System.Net.Http.Headers;
 
 namespace MyApi.Repositories
 {

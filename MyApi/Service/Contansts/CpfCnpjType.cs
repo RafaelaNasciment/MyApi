@@ -2,7 +2,7 @@
 {
     public class CpfCnpjType
     {
-        public static string Cep = "Cep";
-        public static string Cnpj = "Cnpj";
+        public const string Cep = "Cep";
+        public const string Cnpj = "Cnpj";
     }
 }

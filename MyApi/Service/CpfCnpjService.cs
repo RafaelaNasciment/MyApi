@@ -13,7 +13,7 @@ namespace MyApi.Service
             _invertextoRepository = invertextoRepository;
         }
 
-        public async Task<CpfCnpjModel> Handle(string cpfCnpj, CpfCnpjType type)
+        public async Task<CpfCnpjModel> Handle(string cpfCnpj, string type)
         {
             CpfCnpjModel validacao = await _invertextoRepository.ValidaCpfCnpjModel(
                 cpfCnpj: cpfCnpj,
