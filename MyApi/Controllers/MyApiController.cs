@@ -5,7 +5,9 @@ using MyApi.Service;
 namespace MyApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
+    
+    //TODO: Configurar o swagger (https://www.treinaweb.com.br/blog/documentando-uma-asp-net-core-web-api-com-o-swagger)
     public class MyApiController : ControllerBase
     {
         private readonly CepService _cepService;
